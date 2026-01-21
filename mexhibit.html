@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEXHIBIT 2026 | Karpagam College of Engineering</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --mech-orange: #ff9f1c; 
+            --mech-dark: #111111;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--mech-dark);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .brand-font {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        /* Gear Animation Background */
+        .gear-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1; overflow: hidden; opacity: 0.1; pointer-events: none;
+        }
+        
+        .big-gear {
+            position: absolute; top: -10%; right: -10%;
+            font-size: 40rem; color: var(--mech-orange);
+            animation: spin 60s linear infinite;
+        }
+
+        .small-gear {
+            position: absolute; bottom: -5%; left: -5%;
+            font-size: 25rem; color: #fff;
+            animation: spin-reverse 40s linear infinite;
+        }
+
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+        @keyframes spin-reverse { 100% { transform: rotate(-360deg); } }
+
+        /* Glassmorphism Card */
+        .glass-card {
+            background: rgba(45, 52, 54, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--mech-orange);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        /* Button Styling */
+        .btn-mech {
+            background: transparent;
+            color: var(--mech-orange);
+            border: 2px solid var(--mech-orange);
+            padding: 12px 30px;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+            z-index: 1;
+            display: inline-block;
+        }
+
+        .btn-mech::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%; width: 100%; height: 100%;
+            background: var(--mech-orange);
+            transition: all 0.3s;
+            z-index: -1;
+        }
+
+        .btn-mech:hover::before { left: 0; }
+        .btn-mech:hover { color: black; box-shadow: 0 0 20px var(--mech-orange); }
+
+        /* Image Containers */
+        .college-logo-container {
+            
+            padding: 5px -200px;
+            border-radius: 4px;
+        }
+        
+        .hero-logo {
+            filter: drop-shadow(0 0 20px rgba(255, 159, 28, 0.3));
+            border-radius: 10px;
+            padding: 20px;
+        }
+        /* Industrial Banner for "14th Edition" */
+        .mech-banner {
+            position: relative;
+            display: inline-block;
+            /* Create the orange gradient background */
+            background: linear-gradient(45deg, var(--mech-orange), #ffb347);
+            padding: 8px 35px;
+            color: #111; /* Dark text for contrast */
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 1.5rem; /* Adjust text size */
+            /* Skew the whole banner for a dynamic look */
+            transform: skewX(-20deg);
+            /* Add the white hard border match the logo */
+            box-shadow: 
+                0 0 0 3px #111, /* Inner dark ring */
+                0 0 0 6px #fff, /* Outer white ring */
+                0 10px 20px rgba(255, 159, 28, 0.4); /* Orange glow */
+        }
+
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="gear-bg">
+        <i class="fa-solid fa-gear big-gear"></i>
+        <i class="fa-solid fa-gear small-gear"></i>
+    </div>
+
+    <nav class="fixed w-full z-50 glass-card border-b-0 rounded-none">
+        <div class="w-full px-4">
+            <div class="flex items-center justify-between h-24">
+                <div class="flex-shrink-0 college-logo-container">
+                    <a href="https://www.kce.ac.in" target="_blank">
+						<img class="h-14 w-auto" src="1000043572.png" alt="Karpagam College of Engineering">
+					</a>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="hover:text-orange-400 px-3 py-2 rounded-md text-sm font-medium transition">Home</a>
+                        <a href="#details" class="hover:text-orange-400 px-3 py-2 rounded-md text-sm font-medium transition">Details</a>
+                        <a href="#contact" class="hover:text-orange-400 px-3 py-2 rounded-md text-sm font-medium transition">Coordinators</a>
+                        <a href="#register" class="bg-orange-500 hover:bg-orange-600 text-black px-4 py-2 rounded font-bold transition">Register Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="relative min-h-screen flex items-center justify-center text-center px-4 pt-40 pb-10">
+        <div class="z-10 max-w-5xl mx-auto w-full">
+            <p class="text-orange-400 tracking-widest uppercase mb10 font-bold" data-aos="fade-down">Department of Mechanical Engineering Presents</p>
+            
+            <div class="flex justify-center mb-0" data-aos="zoom-in">
+                <img src="1000043475.png" alt="MEXHIBIT Logo" class="hero-logo w-full max-w-4xl object-contain">
+            </div>
+            
+			<div class="flex justify-center items-center mb-12" data-aos="zoom-in" data-aos-delay="100">
+                 <div class="mech-banner">
+                    <span>14ᵗʰ Edition</span>
+                 </div>
+            </div>
+            
+            <p class="text-xl md:text-2xl mb-10 text-gray-300 font-light" data-aos="fade-up" data-aos-delay="200">
+                National Level Project Model Display Contest
+            </p>
+
+            <div class="flex flex-col md:flex-row gap-6 justify-center items-center" data-aos="fade-up" data-aos-delay="400">
+                <a href="#register" class="btn-mech">
+                    <i class="fa-solid fa-rocket mr-2"></i> Register Project
+                </a>
+            </div>
+
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto" data-aos="flip-up" data-aos-delay="600">
+                <div class="glass-card p-4 rounded-lg">
+                    <div id="days" class="text-4xl font-bold text-orange-500 brand-font">00</div>
+                    <div class="text-xs uppercase tracking-widest">Days</div>
+                </div>
+                <div class="glass-card p-4 rounded-lg">
+                    <div id="hours" class="text-4xl font-bold text-white brand-font">00</div>
+                    <div class="text-xs uppercase tracking-widest">Hours</div>
+                </div>
+                <div class="glass-card p-4 rounded-lg">
+                    <div id="minutes" class="text-4xl font-bold text-orange-500 brand-font">00</div>
+                    <div class="text-xs uppercase tracking-widest">Minutes</div>
+                </div>
+                <div class="glass-card p-4 rounded-lg">
+                    <div id="seconds" class="text-4xl font-bold text-white brand-font">00</div>
+                    <div class="text-xs uppercase tracking-widest">Seconds</div>
+                </div>
+
+
+        </div>
+    </section>
+	<section id="about" class="py-20 bg-gray-900 border-b border-gray-800">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            
+            <h2 class="text-3xl md:text-5xl font-black mb-8 uppercase tracking-wide" data-aos="fade-up">
+                About the <span class="text-orange-500">Event</span>
+            </h2>
+            
+            <div class="glass-card p-8 md:p-12 rounded-2xl relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                <i class="fa-solid fa-quote-left absolute top-4 left-4 text-6xl text-orange-500/10"></i>
+                
+                <p class="text-lg md:text-xl text-gray-300 leading-relaxed relative z-10 text-justify md:text-center">
+                    <strong class="text-white">MEXHIBIT 2026</strong> is the 14th edition of the National Level Project Model Display Contest, proudly orchestrated by the <span class="text-orange-400">Department of Mechanical Engineering</span> at Karpagam College of Engineering.
+                    <br><br>
+                    We believe that innovation exists everywhere. Therefore, this competition is <strong class="text-orange-400" >OPEN TO ALL.</strong>   We warmly invite participation from:
+                </p>
+
+                <div class="flex flex-wrap justify-center gap-4 mt-8 relative z-10">
+                    <span class="px-4 py-2 bg-gray-800 border border-orange-500/50 rounded-full text-white font-bold text-sm uppercase tracking-wider shadow-[0_0_10px_rgba(255,159,28,0.2)]">
+                        <i class="fa-solid fa-gear mr-2 text-orange-500"></i>Engineering
+                    </span>
+                    <span class="px-4 py-2 bg-gray-800 border border-orange-500/50 rounded-full text-white font-bold text-sm uppercase tracking-wider shadow-[0_0_10px_rgba(255,159,28,0.2)]">
+                        <i class="fa-solid fa-flask mr-2 text-orange-500"></i>Arts & Science
+                    </span>
+                    <span class="px-4 py-2 bg-gray-800 border border-orange-500/50 rounded-full text-white font-bold text-sm uppercase tracking-wider shadow-[0_0_10px_rgba(255,159,28,0.2)]">
+                        <i class="fa-solid fa-graduation-cap mr-2 text-orange-500"></i>Diploma
+                    </span>
+                </div>
+
+                <p class="text-lg text-gray-400 mt-8 relative z-10">
+                    Whether you are pursuing a degree or a diploma, if you have a model or a project to display, this is your platform to shine.
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+    <section id="details" class="py-20 bg-black/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4" data-aos="fade-up">Event <span class="text-orange-500">Info.</span></h2>
+                <div class="h-1 w-24 bg-orange-500 mx-auto rounded"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-xl text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-orange-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-regular fa-calendar-check text-3xl text-orange-500"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-20">The Date</h3>
+                    <p class="text-xl md:text-3xl mb-10 text-gray-100 font-bold">February 18, 2026</p>
+                    <p class="text-xl md:text-2xl text-gray-400 font-ligh">Wednesday</p>
+                </div>
+                <div <div class="glass-card p-8 py-12 rounded-xl text-center border-t-4 border-orange-500 transform scale-105 shadow-2xl relative z-10 overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+        
+        <div class="w-20 h-20 bg-orange-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fa-solid fa-location-dot text-4xl text-orange-500"></i>
+        </div>
+        
+        <h3 class="text-3xl font-bold mb-2">The Venue</h3>
+        <p class="text-gray-300 text-lg">Auditorium, KCE</p>
+        <p class="text-sm text-gray-500 mt-2 mb-10">Karpagam College of Engineering</p>
+        
+        <div class="relative flex justify-center items-center h-24 select-none">
+            
+            <svg class="absolute w-24 h-24 transform -rotate-90 pointer-events-none">
+                <circle cx="48" cy="48" r="46" stroke="#333" stroke-width="4" fill="transparent" />
+                <circle id="progress-ring" cx="48" cy="48" r="46" stroke="#ff9f1c" stroke-width="4" fill="transparent" stroke-dasharray="289" stroke-dashoffset="289" stroke-linecap="round" />
+            </svg>
+
+            <button id="long-press-btn" 
+                class="w-20 h-20 bg-gray-900 rounded-full border border-gray-700 shadow-[0_0_15px_rgba(0,0,0,0.5)] active:scale-95 transition-transform flex flex-col items-center justify-center group"
+                onmousedown="startPress()" onmouseup="cancelPress()" onmouseleave="cancelPress()"
+                ontouchstart="startPress()" ontouchend="cancelPress()">
+                
+                <i class="fa-solid fa-fingerprint text-3xl text-gray-500 group-hover:text-orange-500 transition-colors"></i>
+                <span class="text-[10px] text-gray-500 mt-1 uppercase font-bold tracking-wider group-hover:text-orange-400">Hold</span>
+            </button>
+        </div>
+        
+        <p class="text-xs text-orange-500/50 mt-4 uppercase tracking-widest animate-pulse">GET CO-ORDINATES</p>
+    </div>
+
+    <script>
+        let pressTimer;
+        const circle = document.getElementById('progress-ring');
+        // Circumference = 2 * PI * r (r=46) ~= 289
+        const circumference = 289; 
+
+        function startPress() {
+            // 1. Reset the ring
+            circle.style.transition = 'none';
+            circle.style.strokeDashoffset = circumference;
+            
+            // 2. Start the animation (Fill ring in 1.5s)
+            setTimeout(() => {
+                circle.style.transition = 'stroke-dashoffset 1.5s linear';
+                circle.style.strokeDashoffset = '0';
+            }, 10);
+
+            // 3. Start the timer to open the link
+            pressTimer = setTimeout(() => {
+                // Success! The user held it long enough.
+                window.open("https://maps.app.goo.gl/hSeqGFeQiwXp1NLs9", "_blank");
+                
+                // Visual feedback (Success Flash)
+                document.getElementById('long-press-btn').innerHTML = '<i class="fa-solid fa-check text-4xl text-green-500"></i>';
+                document.getElementById('progress-ring').style.stroke = '#22c55e'; // Turn ring green
+            }, 1500); // 1.5 seconds wait time
+        }
+
+        function cancelPress() {
+            // User let go too early! Cancel everything.
+            clearTimeout(pressTimer);
+            circle.style.transition = 'stroke-dashoffset 0.3s ease-out';
+            circle.style.strokeDashoffset = circumference; // Empty the ring
+        }
+    </script>
+                <div class="glass-card p-8 rounded-xl text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-orange-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-regular fa-clock text-3xl text-orange-500"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-20">The Time</h3>
+                    <p class="text-xl md:text-3xl mb-10 text-gray-100 font-bold">09:30 AM - 04:00 PM</p>
+                    <p class="text-xl md:text-2xl text-gray-400 font-ligh">Full Day</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold mb-12 text-center" data-aos="fade-up">Organizing <span class="text-orange-500">Committee</span></h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <div data-aos="fade-right">
+                    <h3 class="text-2xl font-bold mb-6 border-b border-gray-700 pb-2">Faculty Coordinators</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center space-x-4 bg-gray-900/50 p-4 rounded-lg">
+                            <i class="fa-solid fa-user-tie text-orange-500"></i>
+                            <div><p class="font-bold">Prof. N. Subramani</p><p class="text-sm text-gray-400">AP / MECH</p><p class="font-bold">8610912941</p></div>
+                        </li>
+                        <li class="flex items-center space-x-4 bg-gray-900/50 p-4 rounded-lg">
+                            <i class="fa-solid fa-user-tie text-orange-500"></i>
+                            <div><p class="font-bold">Dr. V.V. Arun Sankar</p><p class="text-sm text-gray-400">AP / MECH</p><p class="font-bold">8056484147</p></div>
+                        </li>
+                         <li class="flex items-center space-x-4 bg-gray-900/50 p-4 rounded-lg">
+                            <i class="fa-solid fa-user-tie text-orange-500"></i>
+                            <div><p class="font-bold">Prof. R. Haridass</p><p class="text-sm text-gray-400">AP / MECH</p><p class="font-bold">9965257090</p></div>
+                        </li>
+                         <li class="flex items-center space-x-4 bg-gray-900/50 p-4 rounded-lg">
+                            <i class="fa-solid fa-user-tie text-orange-500"></i>
+                            <div><p class="font-bold">Prof. Mr. V. Kondusamy</p><p class="text-sm text-gray-400">AP / MECH</p><p class="font-bold">9715025437</p></div>
+                        </li>
+                    </ul>
+                </div>
+
+                <divclass="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+    <div data-aos="fade-left">
+    
+    <h3 class="text-2xl font-bold mb-6 border-b border-gray-700 pb-2">Registration Contacts</h3>
+
+    <div class="space-y-4">
+
+        <div class="glass-card p-4 rounded-lg border border-orange-500/30 flex justify-between items-center group hover:bg-gray-800/80 transition-colors">
+            <div>
+                <p class="font-bold text-lg text-white group-hover:text-orange-400 transition-colors">A. Geethapriyan</p>
+                <p class="text-gray-500 text-sm tracking-wider">6385461119</p>
+            </div>
+            <div class="flex space-x-2">
+                <a href="tel:+916385461119" class="w-10 h-10 flex items-center justify-center bg-gray-900 border border-gray-600 rounded text-gray-400 hover:text-white hover:border-green-500 hover:bg-green-600 transition-all shadow-lg">
+                    <i class="fa-solid fa-phone"></i>
+                </a>
+                <a href="https://wa.me/916385461119?text=Hello,%20I%20have%20a%20query%20regarding%20MEXHIBIT%202026" target="_blank" class="w-10 h-10 flex items-center justify-center bg-gray-900 border border-gray-600 rounded text-gray-400 hover:text-white hover:border-green-400 hover:bg-[#25D366] transition-all shadow-lg">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="glass-card p-4 rounded-lg border border-orange-500/30 flex justify-between items-center group hover:bg-gray-800/80 transition-colors">
+            <div>
+                <p class="font-bold text-lg text-white group-hover:text-orange-400 transition-colors">K. Sudharsan</p>
+                <p class="text-gray-500 text-sm tracking-wider">6381569273</p>
+            </div>
+            <div class="flex space-x-2">
+                <a href="tel:+916381569273" class="w-10 h-10 flex items-center justify-center bg-gray-900 border border-gray-600 rounded text-gray-400 hover:text-white hover:border-green-500 hover:bg-green-600 transition-all shadow-lg">
+                    <i class="fa-solid fa-phone"></i>
+                </a>
+                <a href="https://wa.me/916381569273?text=Hello,%20I%20have%20a%20query%20regarding%20MEXHIBIT%202026" target="_blank" class="w-10 h-10 flex items-center justify-center bg-gray-900 border border-gray-600 rounded text-gray-400 hover:text-white hover:border-green-400 hover:bg-[#25D366] transition-all shadow-lg">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="glass-card p-4 rounded-lg border border-orange-500/30 flex justify-between items-center group hover:bg-gray-800/80 transition-colors">
+            <div>
+                <p class="font-bold text-lg text-white group-hover:text-orange-400 transition-colors">C. Chozhan</p>
+                <p class="text-gray-500 text-sm tracking-wider">8610059105</p>
+            </div>
+            <div class="flex space-x-2">
+                <a href="tel:+918610059105" class="w-10 h-10 flex items-center justify-center bg-gray-900 border border-gray-600 rounded text-gray-400 hover:text-white hover:border-green-500 hover:bg-green-600 transition-all shadow-lg">
+                    <i class="fa-solid fa-phone"></i>
+                </a>
+                <a href="https://wa.me/918610059105?text=Hello,%20I%20have%20a%20query%20regarding%20MEXHIBIT%202026" target="_blank" class="w-10 h-10 flex items-center justify-center bg-gray-900 border border-gray-600 rounded text-gray-400 hover:text-white hover:border-green-400 hover:bg-[#25D366] transition-all shadow-lg">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="glass-card p-4 rounded-lg border border-orange-500/30 flex justify-between items-center group hover:bg-gray-800/80 transition-colors">
+            <div>
+                <p class="font-bold text-lg text-white group-hover:text-orange-400 transition-colors">J. Laksharupan</p>
+                <p class="text-gray-500 text-sm tracking-wider">8220428924</p>
+            </div>
+            <div class="flex space-x-2">
+                <a href="tel:+918220428924" class="w-10 h-10 flex items-center justify-center bg-gray-900 border border-gray-600 rounded text-gray-400 hover:text-white hover:border-green-500 hover:bg-green-600 transition-all shadow-lg">
+                    <i class="fa-solid fa-phone"></i>
+                </a>
+                <a href="https://wa.me/918220428924?text=Hello,%20I%20have%20a%20query%20regarding%20MEXHIBIT%202026" target="_blank" class="w-10 h-10 flex items-center justify-center bg-gray-900 border border-gray-600 rounded text-gray-400 hover:text-white hover:border-green-400 hover:bg-[#25D366] transition-all shadow-lg">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                </a>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+</div>
+            
+             <div class="mt-12 text-center" data-aos="fade-up">
+                 <h3 class="text-xl font-bold mb-4 text-gray-400">Conveners</h3>
+                 <div class="flex flex-wrap justify-center gap-8 text-gray-300">
+                    <div class="glass-card px-6 py-3 rounded-full">Dr. P. Karthigaikumar (Principal)</div>
+                    <div class="glass-card px-6 py-3 rounded-full">Dr. S. Sophia (Dean)</div>
+                    <div class="glass-card px-6 py-3 rounded-full">Dr. K. Ravikumar (HoD / Mech)</div>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="register" class="py-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-orange-600/10 z-0"></div>
+        <div class="max-w-4xl mx-auto text-center relative z-10 px-4">
+            <h2 class="text-4xl md:text-5xl font-black mb-6">READY TO EXHIBIT?</h2>
+            
+            <div class="bg-white p-4 inline-block rounded-lg mb-8 shadow-[0_0_20px_rgba(255,159,28,0.5)]" data-aos="zoom-in">
+                <img src="qrcode.jpeg" alt="Scan to Register" class="w-80 h-80">
+                <p class="text-black font-bold mt-2 text-sm">SCAN TO REGISTER</p>
+            </div>
+            
+            <p class="text-xl font-bold text-orange-500 mb-8">Registration Deadline: 14.02.2026</p>
+			<a href="https://docs.google.com/forms/d/e/1FAIpQLSfFMAr51jdKyoxHgAsK9SrOlLAAA6lIB7IdIpqztW4yIAZU2g/viewform?pli=1" target="_blank">
+                <button class="bg-orange-500 text-black font-black py-4 px-10 rounded-full text-xl hover:bg-white hover:text-orange-600 transition duration-300 transform hover:scale-105 shadow-lg">
+                    CLICK TO REGISTER
+                </button>
+    </section>
+
+    <footer class="bg-black border-t border-gray-800 pt-10 pb-6">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-gray-500 text-sm">
+                &copy; TEAM MEXHIBIT.<br>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        // Countdown Timer
+        const eventDate = new Date("Feb 18, 2026 09:30:00").getTime();
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+            document.getElementById("days").innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+            document.getElementById("hours").innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+            document.getElementById("minutes").innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+            document.getElementById("seconds").innerHTML = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
+            if (distance < 0) { clearInterval(x); document.getElementById("days").innerHTML = "00"; }
+        }, 1000);
+    </script>
+</body>
+</html>
